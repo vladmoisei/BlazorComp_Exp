@@ -1,0 +1,195 @@
+@import '';
+
+/* _content/Blazor_Components_VM_Ex/Components/ExInputText.razor.rz.scp.css */
+.mandatory__class[b-lmifo3ekzv] {
+    border-width: 1px;
+    border-color: red;
+}
+
+label[b-lmifo3ekzv] {
+    background-color: lightgray;
+    padding: 1px;
+}
+
+input[b-lmifo3ekzv] {
+    margin: 2px;
+}
+
+.show__message_hover[b-lmifo3ekzv] {
+    display: none;
+}
+
+.message[b-lmifo3ekzv] {
+
+}
+/* _content/Blazor_Components_VM_Ex/Components/TooltipComp.razor.rz.scp.css */
+.tooltip-wrapper[b-t4bi95nfem] {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    cursor: help;
+}
+
+span[b-t4bi95nfem] {
+    visibility: hidden;
+    position: absolute;
+/*    width: 120px;*/
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: #a49c9c;
+    color: #ac0000;
+    text-align: center;
+    padding: 5px 1px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+    span[b-t4bi95nfem]::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+.tooltip-wrapper:hover span[b-t4bi95nfem] {
+    visibility: visible;
+}
+/* _content/Blazor_Components_VM_Ex/Shared/MainLayout.razor.rz.scp.css */
+.page[b-2jylzcincm] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main[b-2jylzcincm] {
+    flex: 1;
+}
+
+.sidebar[b-2jylzcincm] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-2jylzcincm] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-2jylzcincm]  a, .top-row .btn-link[b-2jylzcincm] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-2jylzcincm] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-2jylzcincm] {
+        display: none;
+    }
+
+    .top-row.auth[b-2jylzcincm] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-2jylzcincm], .top-row .btn-link[b-2jylzcincm] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-2jylzcincm] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-2jylzcincm] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-2jylzcincm] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .main > div[b-2jylzcincm] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/Blazor_Components_VM_Ex/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-f9msjflx94] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-f9msjflx94] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-f9msjflx94] {
+    font-size: 1.1rem;
+}
+
+.oi[b-f9msjflx94] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-f9msjflx94] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-f9msjflx94] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-f9msjflx94] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-f9msjflx94]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-f9msjflx94]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-f9msjflx94]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-f9msjflx94] {
+        display: none;
+    }
+
+    .collapse[b-f9msjflx94] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}

@@ -1,0 +1,32 @@
+﻿@page "/formularex"
+
+<h3>FormularEx</h3>
+
+<EditForm Model="@persoana">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <TooltipComp Text=@($"{ nameof(persoana.LastName)} is required!")>
+        <ExInputText @bind-Value="persoana.LastName" @bind-Value:event="ValueChanged" Mandatory="true" Label="@nameof(persoana.LastName)"/>
+    </TooltipComp>
+    <ExInputText @bind-Value="persoana.FirstName" Label="@nameof(persoana.FirstName)"/>
+
+    @*<InputText @bind-Value="persoana.Email"/>
+    <InputText @bind-Value="persoana.Telefon"/>*@
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+
+    private Persoana persoana = new Persoana();
+
+
+    private void HandleValidSubmit()
+    {
+
+        Console.WriteLine(persoana.LastName);
+        // Process the valid form
+    }
+}
+

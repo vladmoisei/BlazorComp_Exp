@@ -1,0 +1,38 @@
+﻿<div>
+    <label>@Label <input class="_fieldCssClasses @MandatoryClass" value="@Value" @oninput="HandleInput" /></label>
+</div>
+
+@code {
+
+    private FieldIdentifier _fieldIdentifier;
+    private string _fieldCssClasses => CascadedEditContext?.FieldCssClass(_fieldIdentifier) ?? "";
+
+    [CascadingParameter] private EditContext CascadedEditContext { get; set; }
+
+    [Parameter] public string Value { get; set; }
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+    [Parameter] public Expression<Func<string>> ValueExpression { get; set; }
+    [Parameter] public bool Mandatory { get; set; }
+    [Parameter] public string Label { get; set; }
+
+    private string MandatoryClass { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _fieldIdentifier = FieldIdentifier.Create(ValueExpression);
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        MandatoryClass = Mandatory ? string.IsNullOrEmpty(Value) ? "mandatory__class" : "" : "";
+    }
+
+    private async Task HandleInput(ChangeEventArgs args)
+    {
+        MandatoryClass = string.IsNullOrEmpty(args.Value.ToString()) ? "mandatory__class" : "";
+        await ValueChanged.InvokeAsync(args.Value.ToString());
+        CascadedEditContext?.NotifyFieldChanged(_fieldIdentifier);
+    }
+
+}

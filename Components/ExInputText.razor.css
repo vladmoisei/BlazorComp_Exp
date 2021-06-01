@@ -1,0 +1,21 @@
+﻿.mandatory__class {
+    border-width: 1px;
+    border-color: red;
+}
+
+label {
+    background-color: lightgray;
+    padding: 1px;
+}
+
+input {
+    margin: 2px;
+}
+
+.show__message_hover {
+    display: none;
+}
+
+.message {
+
+}
